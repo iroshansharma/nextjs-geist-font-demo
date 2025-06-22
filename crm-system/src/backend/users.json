@@ -1,0 +1,38 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "superadmin",
+            "password_hash": "$2y$10$\/MqMd9.8\/q3EoU.YRVX6r.ifalYCW6mLMv5zqTZ2BAPnBdkn3e5BS",
+            "role_id": 1,
+            "department": "admin"
+        },
+        {
+            "id": 2,
+            "username": "adminuser",
+            "password_hash": "$2y$10$zw2cH3HwWi.gazmicSU89O3z1dLLxEjQsYh2LrswMwjtUPjHRxk.W",
+            "role_id": 2,
+            "department": "office",
+            "updated_at": "2025-06-22 09:21:33",
+            "updated_by": "superadmin"
+        },
+        {
+            "id": 3,
+            "username": "normaluser",
+            "password_hash": "$2y$10$olB\/HL.V9gOwFEl7yYkSDuD36PLoJPQJhnHUzrC.7TPr9kqBILv3a",
+            "role_id": 3,
+            "department": "office",
+            "updated_at": "2025-06-22 09:21:59",
+            "updated_by": "superadmin"
+        },
+        {
+            "id": 4,
+            "username": "showroomuser",
+            "password_hash": "$2y$10$HbTZMELz5Cpy1sKaZ..qT.qSPEsJqm9h3SErwtIo\/kjtcTkDiplpm",
+            "role_id": 3,
+            "department": "showroom",
+            "updated_at": "2025-06-22 09:22:10",
+            "updated_by": "superadmin"
+        }
+    ]
+}

@@ -1,17 +1,21 @@
 <?php
 // Database configuration
-
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'crm_system');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
-// Create a PDO instance for database connection
-try {
-    $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
-    // Set error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+// Create a MySQL connection
+$conn = mysql_connect(DB_HOST, DB_USER, DB_PASS);
+if (!$conn) {
+    die("Database connection failed: " . mysql_error());
 }
+
+// Select database
+if (!mysql_select_db(DB_NAME, $conn)) {
+    die("Database selection failed: " . mysql_error());
+}
+
+// Set charset to utf8
+mysql_set_charset('utf8', $conn);
 ?>

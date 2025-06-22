@@ -1,0 +1,46 @@
+{
+    "types": [
+        {
+            "id": 1,
+            "name": "Travel Allowance",
+            "description": "Local conveyance or outstation travel expenses",
+            "active": true
+        },
+        {
+            "id": 2,
+            "name": "Food / Meal Reimbursement",
+            "description": "Meal expenses during work hours or business trips",
+            "active": true
+        },
+        {
+            "id": 3,
+            "name": "Mobile / Internet Reimbursement",
+            "description": "Communication expenses for work purposes",
+            "active": true
+        },
+        {
+            "id": 4,
+            "name": "Stationery / Office Supplies",
+            "description": "Office supplies and stationery items",
+            "active": true
+        },
+        {
+            "id": 5,
+            "name": "Client Meeting Expenses",
+            "description": "Expenses incurred during client meetings",
+            "active": true
+        },
+        {
+            "id": 6,
+            "name": "Hotel Stay / Lodging",
+            "description": "Accommodation expenses during business trips",
+            "active": true
+        },
+        {
+            "id": 7,
+            "name": "Miscellaneous Reimbursement",
+            "description": "Other work-related expenses",
+            "active": true
+        }
+    ]
+}

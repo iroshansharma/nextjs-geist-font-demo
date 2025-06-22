@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once 'config.php';
 
 // Function to sanitize input
 function sanitize($data) {
@@ -9,19 +8,21 @@ function sanitize($data) {
 
 // User login function
 function login($username, $password) {
-    global $pdo;
     $username = sanitize($username);
-
-    $stmt = $pdo->prepare("SELECT id, username, password_hash, role_id FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && password_verify($password, $user['password_hash'])) {
-        // Set session variables
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['role_id'] = $user['role_id'];
-        return true;
+    
+    // Read users from JSON file
+    $users_json = file_get_contents(__DIR__ . '/users.json');
+    $users_data = json_decode($users_json, true);
+    
+    foreach ($users_data['users'] as $user) {
+        if ($user['username'] === $username && password_verify($password, $user['password_hash'])) {
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role_id'] = $user['role_id'];
+            $_SESSION['department'] = $user['department'] ?? 'office'; // Default to office for backward compatibility
+            return true;
+        }
     }
     return false;
 }
